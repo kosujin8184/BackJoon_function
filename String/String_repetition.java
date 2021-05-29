@@ -43,10 +43,10 @@ public class String_repetition{
 
         for(int i=0; i<index; i++){
 
-            StringTokenizer st = new StringTokenizer(br.readLine());  //br에 한줄씩 ""기준으로 끊어서 st에 삽입
+            StringTokenizer st = new StringTokenizer(br.readLine());  //br에 한줄씩 '띄어쓰기'기준으로 끊어서 st에 삽입
             int num=Integer.parseInt(st.nextToken());//st의 하나하나가 정수형으로 변환
 
-            String str=st.nextToken(); //c에 자른 st넣기
+            String str=st.nextToken(); //num다음에 c에 자른 st넣기
             String temp="";
 
             for(int j=0; j<str.length(); j++){
