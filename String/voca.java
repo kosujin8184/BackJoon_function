@@ -21,6 +21,10 @@ public class voca {
 
         str = br.readLine();
 
+        for(int i=0; i<26; i++){
+            arr[i]=0;
+        }
+
         for(int i=0; i<str.length(); i++){
             //str에 소문자가 들어왔을 때
             if(('a' <= str.charAt(i)) && (str.charAt(i) <= 'z')){
@@ -34,13 +38,19 @@ public class voca {
 
         int max=-1; //가장 많은 char을 출력시키기 위해 비교하기위한 max
         char c = '?';   //같은 것이 2개 이상일땐 '?'출력
-        String temp="";
-        StringTokenizer st = new StringTokenizer(str);
         
-        
+        for(int i=0; i<26; i++){
+            if(arr[i] > max){
+                max=arr[i];
+                c = (char)(i+65);   //출력은 대문자다. 그래서 +65
+            }
+            else if(arr[i] == max){
+                c = '?';    //2개이상의 같은게 있을 때
+            }
+        }
 
 
-        bw.write(temp);
+        bw.write(c);
         bw.flush();
         bw.close();
     }
